@@ -18,7 +18,8 @@
         }
     ],
     "require": {
-        "inshore/bookwhen": "dev-develop"
+        "inshore/bookwhen": "dev-develop",
+        "vlucas/phpdotenv": "5.5.x-dev"
     },
     "minimum-stability": "dev"
 }

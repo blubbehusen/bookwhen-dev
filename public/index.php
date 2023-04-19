@@ -2,7 +2,7 @@
 
 declare (strict_types = 1);
 
-require_once './vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 // phpinfo();
 
@@ -100,3 +100,4 @@ $reformerSkillsImage->mimeType = 'image/jpg';
 // $reformerImage = new stdClass();
 // $reformerImage->base64 = base64_encode(file_get_contents(__DIR__ . '/2f115bddcfd4a141b1006636c60f6f48.jpg'));
 // $reformerImage->mimeType = 'image/jpg';
+/*/
