@@ -9,12 +9,9 @@ require_once '../vendor/autoload.php';
 use \Dotenv\Dotenv;
 use \InShore\Bookwhen\Client as Client;
 
-DotEnv::createImmutable(__DIR__);$dotenv->load();
+DotEnv::createImmutable(__DIR__ . '/../')->load();
 
 $client = new \InShore\Bookwhen\Client($_ENV['INSHORE_BOOKWHEN_API_KEY'], $_ENV['INSHORE_BOOKWHEN_LOGGING']);
-
-
-
 
 /*
 
