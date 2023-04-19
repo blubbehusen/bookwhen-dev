@@ -1,0 +1,24 @@
+
+    "name": "danielmullin/bookwhen-test",
+    "autoload": {
+        "psr-4": {
+            "Danielmullin\\BookwhenTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Mullin",
+            "email": "email@danielmullin.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/danielmullin/bookwhen"
+        }
+    ],
+    "require": {
+        "inshore/bookwhen": "dev-develop"
+    },
+    "minimum-stability": "dev"
+}
