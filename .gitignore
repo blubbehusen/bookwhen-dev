@@ -1,3 +1,4 @@
+.env
 .project
 composer.lock
 composer.phar
