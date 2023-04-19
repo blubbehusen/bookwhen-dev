@@ -1,4 +1,4 @@
-
+{
     "name": "danielmullin/bookwhen-test",
     "autoload": {
         "psr-4": {
