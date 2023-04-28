@@ -19,7 +19,20 @@
     ],
     "require": {
         "inshore/bookwhen": "dev-develop",
-        "vlucas/phpdotenv": "5.5.x-dev"
+        "vlucas/phpdotenv": "5.5.x-dev",
+        "php-http/discovery": "1.x-dev",
+        "psr/http-client": "1.0.x-dev",
+        "psr/http-client-implementation": "*",
+        "psr/http-message": "2.0.x-dev",
+        "psr/http-factory-implementation": "*"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "dev-main"
+    }
 }
