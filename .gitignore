@@ -2,4 +2,4 @@
 .project
 composer.lock
 composer.phar
-/vendor/
+/php/vendor/
