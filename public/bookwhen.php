@@ -10,26 +10,33 @@ use InShore\Bookwhen\Bookwhen;
 DotEnv::createImmutable(__DIR__.'/../')->load();
 
 $bookwhen = new Bookwhen();
-
-var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: true, includeTickets: true));
+//var_export($bookwhen->attachment('3wepl3we3kq9'));
+//var_export($bookwhen->attachments(fileName: 'CV'));
+//var_export($bookwhen->events());
+//var_export($bookwhen->events(to: '20230501'));
+//var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: true, includeTickets: true));
 //var_export($bookwhen->events(to: '20230501', includeLocation: true, includeTickets: true));
+
+//var_export($bookwhen->location('w0uh48ad3fm2'));
+//var_export($bookwhen->locations());
+//var_export($bookwhen->locations(addressText: 'Remote'));
 
 //var_export($bookwhen->attachments());
 
-//var_export($bookwhen->events(to: '20230501'));
-//var_export($bookwhen->events(to: '20230501'));
+//var_export($bookwhen->events());
+//var_export($bookwhen->events(to: '20230501', includeLocation: true, includeTickets: true));
 
-
-//var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: true, includeTickets: true));
+var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: false, includeTickets: false));
 //if ($bookwhen->event->soldOut) {
 //    var_export($bookwhen->event);
 //} else {
- //   var_export($bookwhen->event->tickets);
+//   var_export($bookwhen->event->tickets);
 //}
 
-//var_export($bookwhen->ticket('ti-s4dt-20230421130000-typw'));
+//var_export($bookwhen->classPass('cp-qkrrxz0zh8i0'));
+//var_export($bookwhen->ticket('ti-s4bs-20230501080000-tp9b'));
 
-//var_export($bookwhen->tickets('ev-s4dt-20230421130000'));
+//var_export($bookwhen->tickets('ev-siyg-20230501080000', includeEvents: true));
 
 //var_export($bookwhen->classPasses());
 //var_export($bookwhen->classPass('ev-svg4-20230424130000'));
