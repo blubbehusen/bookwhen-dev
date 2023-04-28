@@ -26,7 +26,7 @@ $bookwhen = new Bookwhen();
 //var_export($bookwhen->events());
 //var_export($bookwhen->events(to: '20230501', includeLocation: true, includeTickets: true));
 
-var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: false, includeTickets: false));
+var_export($bookwhen->event('ev-siyg-20230501080000', includeLocation: true, includeTickets: false));
 //if ($bookwhen->event->soldOut) {
 //    var_export($bookwhen->event);
 //} else {
