@@ -19,7 +19,7 @@ services:
   php-drupal:
     build: ./docker/php/
     expose:
-      - 9001
+      - 9000
     restart: on-failure
     volumes:
       - ./drupal/drupal-bookwhen-app/:/var/www
@@ -28,7 +28,7 @@ services:
   php-laravel:
     build: ./docker/php/
     expose:
-      - 9002
+      - 9000
     restart: on-failure
     volumes:
       - ./laravel/laravel-bookwhen-app/:/var/www/html
