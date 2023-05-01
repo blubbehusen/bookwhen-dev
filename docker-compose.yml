@@ -7,20 +7,100 @@ networks:
         - subnet: 10.0.10.1/24
 
 services:
-  php:
+  db:
+    environment:
+      MARIADB_ROOT_PASSWORD: 'bookwhen'
+      MARIADB_DATABASE: 'bookwhen'
+    expose:
+      - 3306
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    restart: on-failure
+    volumes:
+      - ./mariadb:/var/lib/mysql
+  php-php:
     build: ./docker/php/
     expose:
       - 9000
     restart: on-failure
     volumes:
-      - .:/var/www/html
+      - ./php/:/var/www/html
       - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
-  webserver:
+  php-drupal:
+    build: ./docker/php/
+    expose:
+      - 9000
+    restart: on-failure
+    volumes:
+      - ./drupal/drupal-bookwhen-app/:/var/www/html
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+  php-laravel:
+    build: ./docker/php/
+    expose:
+      - 9000
+    restart: on-failure
+    volumes:
+      - ./laravel/laravel-bookwhen-app/:/var/www/html
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+  php-symfony:
+    build: ./docker/php/
+    expose:
+      - 9000
+    restart: on-failure
+    volumes:
+      - ./symfony/symfony-bookwhen-app/:/var/www/html
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+  php-wordpress:
+    build: ./docker/php/
+    expose:
+      - 9000
+    restart: on-failure
+    volumes:
+      - ./wordpress:/var/www/html
+      - ./docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+  webserver-php:
     image: nginx:latest
     ports:
       - 8080:80
     restart: on-failure
     volumes:
-      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./:/var/www/html
+      - ./docker/nginx/php.conf:/etc/nginx/conf.d/default.conf
+      - ./php/:/var/www/html
+  webserver-drupal:
+    image: nginx:latest
+    ports:
+      - 8081:81
+    restart: on-failure
+    volumes:
+      - ./docker/nginx/drupal.conf:/etc/nginx/conf.d/default.conf
+      - ./drupal/drupal-bookwhen-app/:/var/www/html
+  webserver-laravel:
+    image: nginx:latest
+    ports:
+      - 8082:82
+    restart: on-failure
+    volumes:
+      - ./docker/nginx/laravel.conf:/etc/nginx/conf.d/default.conf
+      - ./laravel/laravel-bookwhen-app/:/var/www/html
+  webserver-symfony:
+    image: nginx:latest
+    ports:
+      - 8083:83
+    restart: on-failure
+    volumes:
+      - ./docker/nginx/symfony.conf:/etc/nginx/conf.d/default.conf
+      - ./symfony/symfony-bookwhen-app/:/var/www/html
+  webserver-wordpress:
+    image: nginx:latest
+    ports:
+      - 8084:84
+    restart: on-failure
+    volumes:
+      - ./docker/nginx/wordpress.conf:/etc/nginx/conf.d/default.conf
+      - ./wordpress/wordpress-bookwhen-app/:/var/www/html

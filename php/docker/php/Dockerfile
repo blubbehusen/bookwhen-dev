@@ -15,7 +15,7 @@ RUN curl -sSLf \
     -o /usr/local/bin/install-php-extensions \
     https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions && \
     chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions ctype gd opcache pdo_mysql mysqli 
+    install-php-extensions ctype
 
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
