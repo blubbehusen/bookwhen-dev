@@ -2,4 +2,6 @@
 .project
 composer.lock
 composer.phar
+mariadb/
 /php/vendor/
+
